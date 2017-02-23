@@ -1,8 +1,9 @@
 clear all
-a = 0;
-b = 100;
-N = 100000;
-t = linspace(a, b, N+1)';
+funcprot(0)
+t0 = 0;
+t1 = 100;
+N  = 100000;
+t  = linspace(t0, t1, N+1)';
 
 // Here is the Lorenz equation this function represents:
 // https://en.wikipedia.org/wiki/Lorenz_system#Overview
@@ -16,8 +17,13 @@ function ydot = lorenz(t, y)
     ydot(3) = y(1)*y(2) - b*y(3);         // This is dz/dt
 endfunction
 
-y = ode([1.0; 1.0; 1.0], 0, t', lorenz)';
+// Initial conditions
+y0 = [1.0; 1.0; 1.0];
 
+// Solution
+y  = ode(y0, t0, t', lorenz)';
+
+// Plotting in one figure window
 figure(1)
 
 subplot(221)
