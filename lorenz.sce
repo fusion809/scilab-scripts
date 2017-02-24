@@ -1,8 +1,13 @@
+// Clear all variables (helps make script more predictable in behaviour)
 clear all
+// Unset functions
 funcprot(0)
+// Integration domain
 t0 = 0;
 t1 = 100;
+// Number of integration points
 N  = 100000;
+// time vector
 t  = linspace(t0, t1, N+1)';
 
 // Here is the Lorenz equation this function represents:
