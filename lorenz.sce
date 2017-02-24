@@ -4,9 +4,9 @@ clear all
 funcprot(0)
 // Integration domain
 t0 = 0;
-t1 = 50;
+t1 = 100;
 // Number of integration points
-N  = 10000;
+N  = 100000;
 // time vector
 t  = linspace(t0, t1, N+1)';
 
@@ -49,5 +49,6 @@ plot2d(y(:,2),y(:,3),15);
 xlabel('y(t)');
 ylabel('z(t)');
 
+// second figure showing parametric plot of x, y, z
 figure(2)
-plot3d(y(:,1),y(:,2),y(:,3))
+param3d(y(:,1),y(:,2),y(:,3))
