@@ -4,9 +4,9 @@ clear all
 funcprot(0)
 // Integration domain
 t0 = 0;
-t1 = 100;
+t1 = 50;
 // Number of integration points
-N  = 100000;
+N  = 10000;
 // time vector
 t  = linspace(t0, t1, N+1)';
 
@@ -31,17 +31,23 @@ y  = ode(y0, t0, t', lorenz)';
 // Plotting in one figure window
 figure(1)
 
+// first subplot showing x vs y
 subplot(221)
 plot2d(y(:,1),y(:,2),21);
 xlabel('x(t)');
 ylabel('y(t)');
 
+// second subplot showing x vs z
 subplot(222)
 plot2d(y(:,1),y(:,3),2);
 xlabel('x(t)');
 ylabel('z(t)');
 
+// third subplot showing y vs z
 subplot(223)
-plot2d(y(:,2),y(:,3),16);
+plot2d(y(:,2),y(:,3),15);
 xlabel('y(t)');
 ylabel('z(t)');
+
+figure(2)
+plot3d(y(:,1),y(:,2),y(:,3))
