@@ -30,6 +30,8 @@ y  = ode(y0, t0, t', lorenz)';
 
 // Plotting in one figure window
 figure(1)
+f1=gcf();
+f1.background = color('white');
 
 // first subplot showing x vs y
 subplot(221)
@@ -51,4 +53,6 @@ ylabel('z(t)');
 
 // second figure showing parametric plot of x, y, z
 figure(2)
+f2 = gcf();
+f2.background = color('white');
 param3d(y(:,1),y(:,2),y(:,3))
